@@ -1,0 +1,88 @@
+﻿<Window x:Class="ShotTtracker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShotTtracker"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="200" />
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="PrimaryCapturedImage" Source="{Binding PrimaryCapturedImage}" Stretch="Uniform" Grid.Row="1" Grid.RowSpan="2" />
+
+        <TabControl Grid.Column="1">
+            <TabItem Header="Image">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Search Radius" Style="{StaticResource Caption}" />
+                        <Label Content="{Binding Profile.TargetImageRadius, FallbackValue=3}" Style="{StaticResource Value}" />
+                    </StackPanel>
+                    <Slider Value="{Binding Path=Profile.TargetImageRadius, Mode=TwoWay}" Minimum="1" Maximum="100"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Brightness" Style="{StaticResource Caption}" />
+                        <Label Content="{Binding Profile.Brightness, FallbackValue=3}" Style="{StaticResource Value}" />
+                    </StackPanel>
+                    <Slider Value="{Binding Path=Profile.Brightness, Mode=TwoWay}" Minimum="1" Maximum="100"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Contrast" Style="{StaticResource Caption}" />
+                        <Label Content="{Binding Profile.Contrast, FallbackValue=3}" Style="{StaticResource Value}" />
+                    </StackPanel>
+                    <Slider Value="{Binding Path=Profile.Contrast, Mode=TwoWay}"  Minimum="1" Maximum="100"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Exposure" Style="{StaticResource Caption}" />
+                        <Label Content="{Binding Profile.Exposure, FallbackValue=3}"  Style="{StaticResource Value}" />
+                    </StackPanel>
+                    <Slider Value="{Binding Path=Profile.Exposure, Mode=TwoWay}" ToolTip="{Binding GaussianKSizeHelp}" Minimum="-50" Maximum="50"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Focus" Style="{StaticResource Caption}" />
+                        <Label Content="{Binding Profile.Focus, FallbackValue=3}"  Style="{StaticResource Value}" />
+                    </StackPanel>
+                    <Slider Value="{Binding Path=Profile.Focus, Mode=TwoWay}" ToolTip="{Binding GaussianKSizeHelp}" Minimum="0" Maximum="50"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Circle">
+                <StackPanel>
+                    <Label Content="Hough Circles" Style="{StaticResource Link}" MouseDown="ShowLink_Handler" Tag="{Binding  HoughCirclesLink}" />
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="DP" Style="{StaticResource Caption}"/>
+                        <Label Content="{Binding Profile.HoughCirclesDP, FallbackValue=3}" Style="{StaticResource Value}" />
+                    </StackPanel>
+                    <Slider Value="{Binding Path=Profile.HoughCirclesDP, Mode=TwoWay}" Minimum="0.5" Maximum="5" SmallChange="0.25" LargeChange="0.25" ToolTip="{Binding HoughCirclesDPHelp}" />
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Min Radius" Style="{StaticResource Caption}"/>
+                        <Label Content="{Binding Profile.HoughCirclesMinRadius, FallbackValue=3}" Style="{StaticResource Value}" />
+                    </StackPanel>
+                    <Slider Value="{Binding Path=Profile.HoughCirclesMinRadius, Mode=TwoWay}" ToolTip="{Binding HoughCirclesMinRadiusHelp}" Minimum="0" Maximum="100" SmallChange="5" LargeChange="25" />
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Max Radius:" Style="{StaticResource Caption}"/>
+                        <Label Content="{Binding Profile.HoughCirclesMaxRadius, FallbackValue=3}" Style="{StaticResource Value}" />
+                    </StackPanel>
+                    <Slider Value="{Binding Path=Profile.HoughCirclesMaxRadius, Mode=TwoWay}" ToolTip="{Binding HoughCirclesMaxRadiusHelp}" Minimum="0" Maximum="200" SmallChange="5" LargeChange="25"  />
+                    <Label Content="Min Distance Between Centers"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Min Distance:" Style="{StaticResource Caption}"/>
+                        <Label Content="{Binding Profile.HoughCirclesMinDistance, FallbackValue=3}" Style="{StaticResource Value}" />
+                    </StackPanel>
+                    <Slider Value="{Binding Path=Profile.HoughCirclesMinDistance, Mode=TwoWay}" ToolTip="{Binding HoughCirclesMinDistanceHelp}" Minimum="0" Maximum="200" SmallChange="5" LargeChange="25"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Gradient Param 1:" Style="{StaticResource Caption}"/>
+                        <Label Content="{Binding Profile.HoughCirclesParam1, FallbackValue=3}" Style="{StaticResource Value}" />
+                    </StackPanel>
+
+                    <Slider Value="{Binding Path=Profile.HoughCirclesParam1, Mode=TwoWay}" ToolTip="{Binding HoughCirclesParam1Help}" Minimum="200" Maximum="400" SmallChange="5" LargeChange="5"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Gradient Param 2:" Style="{StaticResource Caption}"/>
+                        <Label Content="{Binding Profile.HoughCirclesParam2, FallbackValue=3}" Style="{StaticResource Value}" />
+                    </StackPanel>
+                    <Slider Value="{Binding Path=Profile.HoughCirclesParam2, Mode=TwoWay}" ToolTip="{Binding HoughCirclesParam2Help}" Minimum="1" Maximum="100" SmallChange="5" LargeChange="5" />
+                </StackPanel>
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</Window>
