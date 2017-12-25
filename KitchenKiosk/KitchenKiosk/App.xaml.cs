@@ -139,6 +139,9 @@ namespace KitchenKiosk
                 ISYService.Instance.Disconnected += Instance_Disconnected;
                 ISYEventListener.Instance.ISYEventReceived += Instance_ISYEventReceived;
 
+                await Managers.LedController.Instance.InitAsync(0x40, mobileCenterAnalytics);
+                await Managers.ScreenManager.Instance.InitAsync(mobileCenterAnalytics);
+
                 await ISYService.Instance.InitAsync();
                 await ISYService.Instance.RefreshAsync();
 

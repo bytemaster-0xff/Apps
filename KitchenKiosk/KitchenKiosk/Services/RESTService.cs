@@ -25,15 +25,25 @@ namespace KitchenKiosk.Services
                         var hubId = path.Substring("/stping".Length).TrimStart('/');
                         var stHub = SmartThingsHubs.Instance.Hubs.Where(hub => hub.Id.ToLower() == hubId.ToLower()).FirstOrDefault();
                         stHub.LastPing = DateTime.Now;
-                        await WriteResponseAsync(socket, "application/json", 200, @"{""status"":""pong""}"); break;
+                        await WriteResponseAsync(socket, "application/json", 200, @"{""status"":""pong""}"); 
+                        return true;
                     }
                 case "/stsubscribe":
                     {
                         var hubId = path.Substring("/stsubscribe".Length).TrimStart('/');
                         SubscribeToSmartThingHub(hubId, socket.Information.RemoteAddress.DisplayName, socket.Information.RemotePort);
                         await WriteResponseAsync(socket, "application/json", 200, @"{""subscribed"":""ok""}");
+                        return true;
                     }
-                    break;
+                case "/screen/up":
+                    Managers.ScreenManager.Instance.Up();
+                    return true;
+                case "/screen/down":
+                    Managers.ScreenManager.Instance.Down();
+                    return true;
+                case "/screen/stop":
+                    Managers.ScreenManager.Instance.Stop();
+                    return true;
             }
 
 

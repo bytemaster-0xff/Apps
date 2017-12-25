@@ -1,0 +1,22 @@
+﻿{
+  "dependencies": {
+    "LagoVista.Client.Core": "1.2.222-alpha1620",
+    "LagoVista.Core": "1.2.222-alpha0754",
+    "LagoVista.Core.Networking": "1.2.222-alpha0754",
+    "LagoVista.Core.UWP": "1.2.211-alpha1527",
+    "LagoVista.MQTT": "1.2.216-alpha1541",
+    "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.5",
+    "Newtonsoft.Json": "11.0.1-beta1"
+  },
+  "frameworks": {
+    "uap10.0.14393": {}
+  },
+  "runtimes": {
+    "win10-arm": {},
+    "win10-arm-aot": {},
+    "win10-x86": {},
+    "win10-x86-aot": {},
+    "win10-x64": {},
+    "win10-x64-aot": {}
+  }
+}
