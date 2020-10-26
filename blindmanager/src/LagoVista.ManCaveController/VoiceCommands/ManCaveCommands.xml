@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
+  <CommandSet xml:lang="en-us" Name="ManCaveCommandSet_en-us">
+    <CommandPrefix>Please</CommandPrefix>
+    <Example> Man cave give me some shade </Example>
+
+    <Command Name="blinds">
+      <Example> Man cave please open the blinds. </Example>
+      <ListenFor> {blindState} [the] {blindId} blinds </ListenFor>      
+      <Feedback> Ok yes I can do that </Feedback>
+      <VoiceCommandService Target="CortanaBGService"/>
+    </Command>
+
+    <PhraseList Label="blindId">
+      <Item>West</Item>
+      <Item>Southwest</Item>
+      <Item>South</Item>
+      <Item>Southeast</Item>
+      <Item>Door</Item>
+    </PhraseList>
+
+      <PhraseList Label="blindState">
+      <Item>Open</Item>
+      <Item>Close</Item>
+    </PhraseList>
+  </CommandSet>
+
+  <!-- Other CommandSets for other languages -->
+
+</VoiceCommands>

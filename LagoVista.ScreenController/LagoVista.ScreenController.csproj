@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{FCDF8463-FE9C-40A6-A221-DBACF9470177}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LagoVista.ScreenController</RootNamespace>
+    <AssemblyName>LagoVista.ScreenController</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.17763.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>LagoVista.ScreenController_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <RuntimeIdentifiers>win10-arm;win10-arm-aot;win10-x86;win10-x86-aot;win10-x64;win10-x64-aot</RuntimeIdentifiers>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NETFX_CORE;WINDOWS_UWP;CODE_ANALYSIS;;DISABLE_XAML_GENERATED_BREAK_ON_UNHANDLED_EXCEPTION;CODE_ANALYSIS</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\LEDController.cs" />
+    <Compile Include="Services\ScreenController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="LagoVista.ScreenController_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Add.png" />
+    <Content Include="Images\app_icon.png" />
+    <Content Include="Images\Arrowhead-Down-128.png" />
+    <Content Include="Images\Arrowhead-Down.png" />
+    <Content Include="Images\Arrowhead-Left-128.png" />
+    <Content Include="Images\Arrowhead-Left.png" />
+    <Content Include="Images\Arrowhead-Right-128.png" />
+    <Content Include="Images\Arrowhead-Right.png" />
+    <Content Include="Images\Arrowhead-Up-128.png" />
+    <Content Include="Images\Arrowhead-Up.png" />
+    <Content Include="Images\Beverage-Beer-01.png" />
+    <Content Include="Images\BlankCover.jpg" />
+    <Content Include="Images\BlankCover.png" />
+    <Content Include="Images\Cancel.png" />
+    <Content Include="Images\CCTV-Camera.png" />
+    <Content Include="Images\Check.png" />
+    <Content Include="Images\Device-Radio.png" />
+    <Content Include="Images\fan_off.png" />
+    <Content Include="Images\fan_off_app.png" />
+    <Content Include="Images\fan_on.png" />
+    <Content Include="Images\fan_on_app.png" />
+    <Content Include="Images\Light-Bulb-128.png" />
+    <Content Include="Images\Light-Bulb.png" />
+    <Content Include="Images\light_off.png" />
+    <Content Include="Images\light_off_app.png" />
+    <Content Include="Images\light_on.png" />
+    <Content Include="Images\light_on_app.png" />
+    <Content Include="Images\Media-Fast-Forward-128.png" />
+    <Content Include="Images\Media-Fast-Forward.png" />
+    <Content Include="Images\Media-Pause-128.png" />
+    <Content Include="Images\Media-Pause.png" />
+    <Content Include="Images\Media-Play-128.png" />
+    <Content Include="Images\Media-Play.png" />
+    <Content Include="Images\Media-Rewind-128.png" />
+    <Content Include="Images\Media-Rewind.png" />
+    <Content Include="Images\Media-Stop-128.png" />
+    <Content Include="Images\Media-Stop.png" />
+    <Content Include="Images\menu_icon.png" />
+    <Content Include="Images\pagebg.png" />
+    <Content Include="Images\panobg.jpg" />
+    <Content Include="Images\Pin-128.png" />
+    <Content Include="Images\Pin.png" />
+    <Content Include="Images\Power-128.png" />
+    <Content Include="Images\Power.png" />
+    <Content Include="Images\PowerButton.png" />
+    <Content Include="Images\PowerOff.png" />
+    <Content Include="Images\PowerOn.png" />
+    <Content Include="Images\Projector-128.png" />
+    <Content Include="Images\Projector-Screen-128.png" />
+    <Content Include="Images\Projector-Screen.png" />
+    <Content Include="Images\Projector.png" />
+    <Content Include="Images\refreshing.png" />
+    <Content Include="Images\Save.png" />
+    <Content Include="Images\scene.png" />
+    <Content Include="Images\Swimming-Pool.png" />
+    <Content Include="Images\Table-Fan.png" />
+    <Content Include="Images\Volume-High-128.png" />
+    <Content Include="Images\Volume-High.png" />
+    <Content Include="Images\Volume-Low-128.png" />
+    <Content Include="Images\Volume-Low.png" />
+    <Content Include="Images\Volume-Mute-128.png" />
+    <Content Include="Images\Volume-Mute.png" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="LagoVista.Client.Core">
+      <Version>1.2.226-alpha1506</Version>
+    </PackageReference>
+    <PackageReference Include="LagoVista.Core">
+      <Version>1.2.224-alpha1826</Version>
+    </PackageReference>
+    <PackageReference Include="LagoVista.Core.Networking">
+      <Version>1.2.224-alpha1826</Version>
+    </PackageReference>
+    <PackageReference Include="LagoVista.Core.UWP">
+      <Version>1.2.226-alpha1506</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.0.5</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>11.0.1-beta1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

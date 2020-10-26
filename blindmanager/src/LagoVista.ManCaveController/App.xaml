@@ -1,0 +1,13 @@
+﻿<Application
+    x:Class="LagoVista.ManCaveController.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LagoVista.ManCaveController"
+    xmlns:vms="using:LagoVista.ManCaveController.ViewModels"
+    RequestedTheme="Light">
+
+    <Application.Resources>
+        <vms:BlindsViewModel x:Key="BlindsViewModel" />
+    </Application.Resources>
+
+</Application>
