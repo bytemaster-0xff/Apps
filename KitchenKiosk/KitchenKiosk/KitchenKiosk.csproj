@@ -188,7 +188,7 @@
       <Version>6.0.5</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>11.0.1-beta1</Version>
+      <Version>13.0.2</Version>
     </PackageReference>
     <PackageReference Include="Particle.SDK">
       <Version>0.1.0</Version>
